@@ -9,6 +9,9 @@ import {StepperComponent} from '../../../../_metronic/assets/ts/components'
 import {Form, Formik, FormikValues} from 'formik'
 import {createAccountSchemas, ICreateAccount, inits} from './CreateAccountWizardHelper'
 import { Step6 } from './steps/Step6'
+import { Step7 } from './steps/Step7'
+import { Step8 } from './steps/Step8'
+import { Step9 } from './steps/Step9'
 
 const Vertical = () => {
   const stepperRef = useRef<HTMLDivElement | null>(null)
@@ -199,14 +202,93 @@ const Vertical = () => {
             {/* end::Step 5*/}
 
 
-            {/* begin::Step 6*/}
-            <div className='stepper-item' data-kt-stepper-element='nav'>
+           {/* begin::Step 6*/}
+           <div className='stepper-item' data-kt-stepper-element='nav'>
               {/* begin::Wrapper*/}
               <div className='stepper-wrapper'>
                 {/* begin::Icon*/}
                 <div className='stepper-icon w-40px h-40px'>
                   <i className='stepper-check fas fa-check'></i>
                   <span className='stepper-number'>6</span>
+                </div>
+                {/* end::Icon*/}
+
+                {/* begin::Label*/}
+                <div className='stepper-label'>
+                  <h3 className='stepper-title'>Accionaria</h3>
+                  <div className='stepper-desc fw-semibold'>Tabla Accionaria</div>
+                </div>
+                {/* end::Label*/}
+              </div>
+              {/* end::Wrapper*/}
+
+              {/* begin::Line*/}
+              <div className='stepper-line h-40px'></div>
+              {/* end::Line*/}
+            </div>
+            {/* end::Step 6*/}
+
+              {/* begin::Step 7*/}
+           <div className='stepper-item' data-kt-stepper-element='nav'>
+              {/* begin::Wrapper*/}
+              <div className='stepper-wrapper'>
+                {/* begin::Icon*/}
+                <div className='stepper-icon w-40px h-40px'>
+                  <i className='stepper-check fas fa-check'></i>
+                  <span className='stepper-number'>7</span>
+                </div>
+                {/* end::Icon*/}
+
+                {/* begin::Label*/}
+                <div className='stepper-label'>
+                  <h3 className='stepper-title'>Accionaria 2</h3>
+                  <div className='stepper-desc fw-semibold'>Tabla Accionaria</div>
+                </div>
+                {/* end::Label*/}
+              </div>
+              {/* end::Wrapper*/}
+
+              {/* begin::Line*/}
+              <div className='stepper-line h-40px'></div>
+              {/* end::Line*/}
+            </div>
+            {/* end::Step 7*/}
+
+          {/* begin::Step 8*/}
+           <div className='stepper-item' data-kt-stepper-element='nav'>
+              {/* begin::Wrapper*/}
+              <div className='stepper-wrapper'>
+                {/* begin::Icon*/}
+                <div className='stepper-icon w-40px h-40px'>
+                  <i className='stepper-check fas fa-check'></i>
+                  <span className='stepper-number'>8</span>
+                </div>
+                {/* end::Icon*/}
+
+                {/* begin::Label*/}
+                <div className='stepper-label'>
+                  <h3 className='stepper-title'>Accionaria 3</h3>
+                  <div className='stepper-desc fw-semibold'>Tabla Accionaria</div>
+                </div>
+                {/* end::Label*/}
+              </div>
+              {/* end::Wrapper*/}
+
+              {/* begin::Line*/}
+              <div className='stepper-line h-40px'></div>
+              {/* end::Line*/}
+            </div>
+            {/* end::Step 8*/}
+
+
+            {/* begin::Step 9*/}
+            <div className='stepper-item' data-kt-stepper-element='nav'>
+              {/* begin::Wrapper*/}
+              <div className='stepper-wrapper'>
+                {/* begin::Icon*/}
+                <div className='stepper-icon w-40px h-40px'>
+                  <i className='stepper-check fas fa-check'></i>
+                  <span className='stepper-number'>9</span>
                 </div>
                 {/* end::Icon*/}
 
@@ -219,7 +301,7 @@ const Vertical = () => {
               </div>
               {/* end::Wrapper*/}
             </div>
-            {/* end::Step 6*/}
+            {/* end::Step 9*/}
           </div>
           {/* end::Nav*/}
         </div>
@@ -254,6 +336,19 @@ const Vertical = () => {
               <div data-kt-stepper-element='content'>
                 <Step6 />
               </div>
+
+              <div data-kt-stepper-element='content'>
+                <Step7 />
+              </div>
+
+              <div data-kt-stepper-element='content'>
+                <Step8 />
+              </div>
+
+              <div data-kt-stepper-element='content'>
+                <Step9 />
+              </div>
+
 
               <div className='d-flex flex-stack pt-10'>
                 <div className='mr-2'>

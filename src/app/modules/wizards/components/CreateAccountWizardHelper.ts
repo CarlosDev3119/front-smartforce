@@ -24,9 +24,9 @@ export interface ICreateAccount {
   dateConstitution: string
   altaDate: string
   activity: string
-  email: string
-  name: string
-  celNumber: string
+  curp: string
+  namefull: string
+  porcentaje: string
 
 }
 
@@ -62,10 +62,9 @@ const createAccountSchemas = [
     activity: Yup.string().required().label('Actividad ó Giro'),
   }),
   Yup.object({
-    email: Yup.string().required().label('Correo'),
-    name: Yup.string().required().label('Nombre '),
-    celNumber: Yup.string().required().label('Teléfono'),
-
+    curp: Yup.string().required().label('CURP'),
+    namefull: Yup.string().required().label('Nombre completo '),
+    porcentaje: Yup.string().required().label('% de Participacion'),
   }),
 ]
 
@@ -93,9 +92,9 @@ const inits: ICreateAccount = {
   dateConstitution: '',
   altaDate:'',
   activity:'',
-  email: '',
-  name: '',
-  celNumber: '',
+  curp: '',
+  namefull: '',
+  porcentaje: '',
 
 
 }

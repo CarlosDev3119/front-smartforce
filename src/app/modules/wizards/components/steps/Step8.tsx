@@ -1,16 +1,15 @@
 import {FC} from 'react'
 import { ErrorMessage, Field } from 'formik'
-import { KTIcon } from '../../../../../_metronic/helpers'
 import { useImageFile } from '../../../../hooks/useImageFile';
+import { KTIcon } from '../../../../../_metronic/helpers';
 
-const Step6: FC = () => {
-
+const Step8: FC = () => {
   const {previewImage, handleFileChange} = useImageFile();
 
   return (
     <div className='w-100'>
     <div className='pb-10 pb-lg-12'>
-      <h2 className='fw-bolder text-dark'>Tabla Accionaria</h2>
+      <h2 className='fw-bolder text-dark'>Tabla Accionaria 3</h2>
     </div>
 
     <div className='row'>
@@ -18,7 +17,7 @@ const Step6: FC = () => {
 
           <label
             className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center'
-            htmlFor='fileInput6'
+            htmlFor='fileInput8'
           >
             <KTIcon iconName='folder' className='fs-3x me-5' />
             <span className='d-block fw-bold text-start'>
@@ -32,7 +31,7 @@ const Step6: FC = () => {
             type='file'
             className='btn-check d-none'
             name='accountType'
-            id='fileInput6'
+            id='fileInput8'
             onChange={handleFileChange}
           />
         </div>
@@ -73,9 +72,9 @@ const Step6: FC = () => {
     <div className='fv-row mb-10 mt-3'>
       <label className='form-label required'>Nombre Completo</label>
 
-      <Field type="text" name='namefull' className='form-control form-control-lg form-control-solid' />
+      <Field type="text" name='namefull3' className='form-control form-control-lg form-control-solid' />
       <div className='text-danger mt-2'>
-        <ErrorMessage name='namefull' />
+        <ErrorMessage name='namefull3' />
       </div>
     </div>
 
@@ -86,11 +85,11 @@ const Step6: FC = () => {
 
       <Field
         type="text"
-        name='curp'
+        name='curp3'
         className='form-control form-control-lg form-control-solid'
       />
       <div className='text-danger mt-2'>
-        <ErrorMessage name='curp' />
+        <ErrorMessage name='curp3' />
       </div>
 
     </div>
@@ -100,11 +99,11 @@ const Step6: FC = () => {
 
       <Field
         type='text'
-        name='porcentaje'
+        name='porcentaje3'
         className='form-control form-control-lg form-control-solid'
       />
       <div className='text-danger mt-2'>
-        <ErrorMessage name='porcentaje' />
+        <ErrorMessage name='porcentaje3' />
       </div>
     </div>
 
@@ -113,4 +112,4 @@ const Step6: FC = () => {
   )
 }
 
-export {Step6}
+export {Step8}

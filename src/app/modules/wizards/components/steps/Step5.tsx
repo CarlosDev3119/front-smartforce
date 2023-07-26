@@ -1,8 +1,13 @@
 import React, {FC} from 'react'
 import {KTIcon, toAbsoluteUrl} from '../../../../../_metronic/helpers'
 import {ErrorMessage, Field} from 'formik'
+import { useImageFile } from '../../../../hooks/useImageFile';
 
 const Step5: FC = () => {
+
+  const {previewImage, handleFileChange} = useImageFile();
+
+
   return (
     <div className='w-100'>
     <div className='pb-10 pb-lg-12'>
@@ -14,7 +19,7 @@ const Step5: FC = () => {
 
           <label
             className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center'
-            htmlFor='fileInput'
+            htmlFor='fileInput5'
           >
             <KTIcon iconName='folder' className='fs-3x me-5' />
             <span className='d-block fw-bold text-start'>
@@ -28,17 +33,14 @@ const Step5: FC = () => {
             type='file'
             className='btn-check d-none'
             name='accountType'
-            id='constitutiveFile'
-            onChange={(e) => {
-              if(e.target.files !== null)
-                console.log(e.target.files[0].name)
-              // Aquí puedes manejar la carga del archivo si es necesario
-              // El archivo seleccionado estará disponible en e.target.files[0]
-            }}
+            id='fileInput5'
+            onChange={handleFileChange}
           />
         </div>
 
-        <div className='col-lg-6'>
+      {
+        previewImage && (
+            <div className='col-lg-6'>
             <Field
               type='text'
               className='btn-check'
@@ -58,10 +60,14 @@ const Step5: FC = () => {
                 overflow: 'hidden',
                 height: '100px',           // Altura fija de 100px
               }}>
-                  <img src={toAbsoluteUrl('/media/avatars/300-1.jpg')} alt="" style={{ width: 'auto', height: '100%' }} />
+                  <img src={previewImage} alt="" style={{ width: 'auto', height: '100%' }} />
               </div>
             </label>
         </div>
+        )
+      }
+
+      
 
     </div>
 

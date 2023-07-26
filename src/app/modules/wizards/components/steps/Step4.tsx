@@ -1,8 +1,12 @@
 import React, {FC} from 'react'
 import {KTIcon, toAbsoluteUrl} from '../../../../../_metronic/helpers'
 import {ErrorMessage, Field} from 'formik'
+import { useImageFile } from '../../../../hooks/useImageFile';
 
 const Step4: FC = () => {
+
+  const {previewImage, handleFileChange} = useImageFile();
+
   return (
     <div className='w-100'>
     <div className='pb-10 pb-lg-12'>
@@ -14,7 +18,7 @@ const Step4: FC = () => {
 
           <label
             className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center'
-            htmlFor='fileInput'
+            htmlFor='fileInput4'
           >
             <KTIcon iconName='folder' className='fs-3x me-5' />
             <span className='d-block fw-bold text-start'>
@@ -28,40 +32,39 @@ const Step4: FC = () => {
             type='file'
             className='btn-check d-none'
             name='accountType'
-            id='fileInput'
-            onChange={(e) => {
-              if(e.target.files !== null)
-                console.log(e.target.files[0].name)
-              // Aquí puedes manejar la carga del archivo si es necesario
-              // El archivo seleccionado estará disponible en e.target.files[0]
-            }}
+            id='fileInput4'
+            onChange={handleFileChange}
           />
         </div>
-
-        <div className='col-lg-6'>
-            <Field
-              type='text'
-              className='btn-check'
-              name='imageComprobante'
-              value='imageFiel'
-              id='kt_create_account_form_account_type_corporate'
-            />
-            <label
-              className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center'
-              htmlFor='kt_create_account_form_account_type_corporate'
-            >
-              <div style={{
-                display: 'flex',
-                justifyContent: 'center',  // Centrar horizontalmente
-                alignItems: 'center',      // Centrar verticalmente
-                maxWidth: '100%',
-                overflow: 'hidden',
-                height: '100px',           // Altura fija de 100px
-              }}>
-                  <img src={toAbsoluteUrl('/media/avatars/300-1.jpg')} alt="" style={{ width: 'auto', height: '100%' }} />
-              </div>
-            </label>
-        </div>
+      {
+        previewImage && (
+          <div className='col-lg-6'>
+              <Field
+                type='text'
+                className='btn-check'
+                name='imageComprobante'
+                value='imageFiel'
+                id='kt_create_account_form_account_type_corporate'
+              />
+              <label
+                className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center'
+                htmlFor='kt_create_account_form_account_type_corporate'
+              >
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',  // Centrar horizontalmente
+                  alignItems: 'center',      // Centrar verticalmente
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  height: '100px',           // Altura fija de 100px
+                }}>
+                    <img src={previewImage} alt="" style={{ width: 'auto', height: '100%' }} />
+                </div>
+              </label>
+          </div>
+        )
+      }
+        
 
     </div>
 
